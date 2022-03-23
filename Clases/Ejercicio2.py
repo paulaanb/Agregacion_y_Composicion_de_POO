@@ -3,17 +3,16 @@
 class Yin: pass 
 class Yang: 
     def __del__(self): 
-        print("Yang destruido") 
+        print("Yang ha sido destruido") 
  
 yin = Yin() 
 yang = Yang() 
 yin.yang = yang 
  
+ 
 print(yang) 
->>> <__main__.Yang object at 0x1011da828> 
-print(yang is yin.yang) 
->>> True 
+print(yang is yin.yang)
 del(yang) 
-print("?") 
->>> ? 
-Yang destruido 
+print ("Prueba 1")
+print("¿?")
+print (yang)
