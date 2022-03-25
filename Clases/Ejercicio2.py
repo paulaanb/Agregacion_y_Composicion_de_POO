@@ -14,6 +14,7 @@ yin.yang = yang
 print(yang) 
 print(yang is yin.yang)
 del(yang) 
+del (yin.yang)
 print ("Prueba 1")
 print("¿?")
 print (yang)
