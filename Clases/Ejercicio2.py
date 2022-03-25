@@ -14,7 +14,7 @@ yin.yang = yang
 print(yang) 
 print(yang is yin.yang)
 del(yang) 
-del (yin.yang)
+del (yin.yang) #cerado para que no haya problemas
 print ("Prueba 1")
 print("¿?")
 print (yang)
