@@ -11,7 +11,7 @@ class Edificio():
       #Establecemos las relacioness
       print("¿Que ciudad desea destruir, New_York o Los_Angeles?")
       if ciudad == New_York
-      print("New_York se ha destruido junto con los edificios A y B, y el Mr.Salim y la Sra.Xing")
+      print("New_York se ha destruido junto con los edificios A y B, y el Sr.Salim y la Sra.Xing")
       if ciudad == Los_Angeles
       print("Los_Angeles se ha destruido junto con el edificio C y el Sr.Martin")
    
