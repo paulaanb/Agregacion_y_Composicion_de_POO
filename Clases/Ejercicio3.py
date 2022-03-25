@@ -33,13 +33,18 @@ class Cortina:
 
 #Empezamos a definir las funciones que vamos a utilizar para la instalacion de paredes, ventanas, la casa y la cortina 
 pared_norte = Pared("NORTE") 
-pared_oeste = Pared("OESTE") 
 pared_sur = Pared("SUR") 
 pared_este = Pared("ESTE") 
-ventana_norte = Ventana(pared_norte, 0.5) 
+pared_oeste = Pared("OESTE") 
+
+
+ventana_norte = Ventana(pared_norte, 0.5)
+ventana_sur = Ventana(pared_sur, 2)
+ventana_este = Ventana(pared_este, 1)  
 ventana_oeste = Ventana(pared_oeste, 1) 
-ventana_sur = Ventana(pared_sur, 2) 
-ventana_este = Ventana(pared_este, 1) 
+
 casa = Casa([pared_norte, pared_oeste, pared_sur, pared_este]) 
+
+#Funcion que utilizamos para imprimir el resultado
 print(casa.superficie_acristalada()) 
 
