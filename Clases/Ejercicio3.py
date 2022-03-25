@@ -4,47 +4,49 @@
 #Enunciado: modifique el código para que el programa funcione de nuevo.
 
 
-#Definimos las clases que vamos a utilizar, Pared, Ventana, Casa y Cortina
-class Pared:
-    def __init__(self, orientacion):
-        self.orientacion = orientacion
+# Enunciado 1:
+    #Definimos las clases que vamos a utilizar, Pared, Ventana, Casa y Cortina para que cree una clase que agrupe el comportamiento comun entre ellas
+    class Pared:
+        def __init__(self, orientacion):
+            self.orientacion = orientacion
         
-class Ventana:
-    def __init__(self, pared, superficie, acristalamiento):
-        self.pared = pared
-        self.superficie = superficie
-        self.pared.ventanas.append(self)
-        if acristalamiento is None:
-            raise Exception("El acristamlamiento de la ventana es obligatoria")
-        self.acristalamiento = acristalamiento
+    class Ventana:
+        def __init__(self, pared, superficie, acristalamiento):
+            self.pared = pared
+            self.superficie = superficie
+            self.pared.ventanas.append(self)
+            if acristalamiento is None:
+                raise Exception("El acristamlamiento de la ventana es obligatoria")
+            self.acristalamiento = acristalamiento
 
-class Casa:
-    def __init__(self, paredes, orientacion, superficie):
-        super().__init__(orientacion, superficie)
-        self.paredes = paredes
+    class Casa:
+        def __init__(self, paredes, orientacion, superficie):
+            super().__init__(orientacion, superficie)
+            self.paredes = paredes
     
-    def superficie_acristalada(self):
-        return sum(self.paredes.superficie)
+        def superficie_acristalada(self):
+            return sum(self.paredes.superficie)
 
-class Cortina:
-    def __init__(self, orientacion, superficie):
-        Pared.__init__(self, orientacion)
-        Ventana.__init__(self, self, superficie, "Ninguna")
+    class Cortina:
+        def __init__(self, orientacion, superficie):
+            Pared.__init__(self, orientacion)
+            Ventana.__init__(self, self, superficie, "Ninguna")
 
-#Empezamos a definir las funciones que vamos a utilizar para la instalacion de paredes, ventanas, la casa y la cortina 
-pared_norte = Pared("NORTE") 
-pared_sur = Pared("SUR") 
-pared_este = Pared("ESTE") 
-pared_oeste = Pared("OESTE") 
+    # Enunciado 2: 
+    #Empezamos a definir las funciones que vamos a utilizar para la instalacion de paredes, ventanas, la casa y la cortina para que modifique las clases Ventana y ParedCortina para que usen esta nueva clase-interfaz Cristal 
+    pared_norte = Pared("NORTE") 
+    pared_sur = Pared("SUR") 
+    pared_este = Pared("ESTE") 
+    pared_oeste = Pared("OESTE") 
 
 
-ventana_norte = Ventana(pared_norte, 0.5)
-ventana_sur = Ventana(pared_sur, 2)
-ventana_este = Ventana(pared_este, 1)  
-ventana_oeste = Ventana(pared_oeste, 1) 
+    ventana_norte = Ventana(pared_norte, 0.5)
+    ventana_sur = Ventana(pared_sur, 2)
+    ventana_este = Ventana(pared_este, 1)  
+    ventana_oeste = Ventana(pared_oeste, 1) 
 
-casa = Casa([pared_norte, pared_oeste, pared_sur, pared_este]) 
+    casa = Casa([pared_norte, pared_oeste, pared_sur, pared_este]) 
 
-#Funcion que utilizamos para imprimir el resultado
-print(casa.superficie_acristalada()) 
-
+    # Enunciado 3:
+    #Funcion que utilizamos para imprimir el resultado para que modifique el código para que el programa funcione de nuevo.
+    print(casa.superficie_acristalada()) 
